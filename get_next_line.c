@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getnextline.h                                   :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: llacaze <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/23 14:24:25 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/24 21:10:42 by llacaze          ###   ########.fr       */
+/*   Created: 2017/11/24 14:53:45 by llacaze           #+#    #+#             */
+/*   Updated: 2017/11/24 16:59:44 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_GETNEXTLINE_H
-# define FT_GETNEXTLINE_H
+#include "ft_getnextline.h"
 
-# include <fcntl.h>
-# include <stdlib.h>
-# include <stdio.h>
-# include <unistd.h>
-# include "libft/libft.h"
+char	**buf_to_tab(int fd)
+{
+	static char		*new_str[INT_MAX];
+	int				reead;
 
-# define BUFF_SIZE 10
-# define INT_MAX 2147483647
-int		get_next_line(const int fd, char **line);
+	reead = read(fd, *new_str, BUFF_SIZE);
+	while (reead > 0)
+	{
+		
+	}
+	int	i = -1;
 
-#endif
+	while (new_str[++i])
+		printf("%s", new_str[i]);
+	return (new_str);
+}
+
+int		main(int ac, char **av)
+{
+	int		fd;
+	char	**line;
+	(void)ac;
+	fd = open(av[1], O_RDONLY);
+	line = buf_to_tab(fd);
+	return (0);
+}
