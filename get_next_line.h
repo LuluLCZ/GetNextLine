@@ -6,7 +6,7 @@
 /*   By: llacaze <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/23 14:24:25 by llacaze           #+#    #+#             */
-/*   Updated: 2017/11/25 21:51:39 by llacaze          ###   ########.fr       */
+/*   Updated: 2017/11/27 14:30:10 by llacaze          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 # include <unistd.h>
 # include "libft/libft.h"
 
-# define BUFF_SIZE 10
+# define BUFF_SIZE 4
 # define EOL '\n'
+
 int		get_next_line(const int fd, char **line);
 
 #endif
